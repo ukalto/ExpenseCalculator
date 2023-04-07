@@ -41,3 +41,4 @@ testem.log
 .DS_Store
 Thumbs.db
 calculator_v2/Files/*
+!calculator_v2/Files/.gitkeep
