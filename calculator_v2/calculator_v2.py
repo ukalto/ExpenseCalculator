@@ -35,6 +35,7 @@ def continue_asking():
 
 def option_one():
     directories = os.listdir(origin_path)
+    directories.remove(".gitkeep")
     directories.sort(key=lambda date: datetime.strptime(date, "%b.%Y"))
     for i in directories:
         print(i + "\n")
