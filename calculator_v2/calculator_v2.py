@@ -17,7 +17,15 @@ def print_all_files(path, exclude):
 def process_input(path):
     expenses = []
     for curr_expense in open(path).read().split("\n"):
-        if curr_expense.replace('.', '').replace(',', '').isdigit():
+        curr_expense = curr_expense.strip()
+        if curr_expense.startswith('-'):
+            curr_expense = curr_expense[1:]
+            if curr_expense.replace('.', '').replace(',', '').isdigit():
+                if "," in curr_expense:
+                    expenses.append(-float(curr_expense.replace(",", ".")))  # Convert to negative float
+                else:
+                    expenses.append(-float(curr_expense))  # Convert to negative float
+        elif curr_expense.replace('.', '').replace(',', '').isdigit():
             if "," in curr_expense:
                 expenses.append(float(curr_expense.replace(",", ".")))
             else:
