@@ -22,9 +22,9 @@ def process_input(path):
             curr_expense = curr_expense[1:]
             if curr_expense.replace('.', '').replace(',', '').isdigit():
                 if "," in curr_expense:
-                    expenses.append(-float(curr_expense.replace(",", ".")))  # Convert to negative float
+                    expenses.append(-float(curr_expense.replace(",", ".")))
                 else:
-                    expenses.append(-float(curr_expense))  # Convert to negative float
+                    expenses.append(-float(curr_expense))
         elif curr_expense.replace('.', '').replace(',', '').isdigit():
             if "," in curr_expense:
                 expenses.append(float(curr_expense.replace(",", ".")))
