@@ -141,7 +141,7 @@ def option_seven():
     directories.sort(key=lambda date: datetime.strptime(date, "%b.%Y"))
     for i in directories:
         print(i + "\n")
-        print_all_files(origin_path + i, "investments.txt")
+        print_all_files(origin_path + i, ["investments.txt", "sparbuch.txt"])
         print("---------------")
 
 
